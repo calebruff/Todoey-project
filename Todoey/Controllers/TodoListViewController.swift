@@ -19,7 +19,6 @@ class TodoListViewController: UITableViewController {
         
         let newItem = Item()
         newItem.title = "Find Me"
-        newItem.done = true
         itemArray.append(newItem)
         
         let newItem2 = Item()
@@ -32,9 +31,9 @@ class TodoListViewController: UITableViewController {
         
         
         
-        //        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-        //            itemArray = items
-        //        }
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+                    itemArray = items
+                }
         
     }
     

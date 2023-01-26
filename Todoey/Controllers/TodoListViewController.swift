@@ -30,11 +30,11 @@ class TodoListViewController: UITableViewController {
         newItem.title = "Run"
         itemArray.append(newItem3)
         
-
         
-//        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-//            itemArray = items
-//        }
+        
+        //        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+        //            itemArray = items
+        //        }
         
     }
     

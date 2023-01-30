@@ -12,7 +12,7 @@ import CoreData
 class TodoListViewController: UITableViewController {
     
     var itemArray = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -20,9 +20,7 @@ class TodoListViewController: UITableViewController {
         
         //        loadItems()
         
-        //        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-        //                    itemArray = items
-        //                }
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
     }
     

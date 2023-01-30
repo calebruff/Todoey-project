@@ -12,7 +12,7 @@ import CoreData
 class TodoListViewController: UITableViewController {
     
     var itemArray = [Item]()
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {

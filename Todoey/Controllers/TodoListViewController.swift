@@ -17,7 +17,7 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         loadItems()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -51,7 +51,7 @@ class TodoListViewController: UITableViewController {
         //        itemArray.remove(at: indexPath.row)
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-        
+    
         saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -107,5 +107,11 @@ class TodoListViewController: UITableViewController {
         } catch {
             print("Error fetching data from context\(error)")
         }
+    }
+}
+
+extension TodoListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
     }
 }

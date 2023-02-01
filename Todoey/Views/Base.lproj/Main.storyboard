@@ -47,20 +47,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="jqc-vR-2T4" id="fR2-F5-wFy"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDt-kD-tUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="jqc-vR-2T4">
-                    <connections>
-                        <outlet property="delegate" destination="z7R-V9-92y" id="akL-pj-Yhc"/>
-                        <outlet property="searchBar" destination="Dfo-Dk-RNT" id="MfY-Kw-nW5"/>
-                        <outlet property="searchContentsController" destination="z7R-V9-92y" id="J7w-gU-TUb"/>
-                        <outlet property="searchResultsDataSource" destination="z7R-V9-92y" id="ebQ-wJ-SoX"/>
-                        <outlet property="searchResultsDelegate" destination="z7R-V9-92y" id="SXs-yw-V37"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1727.4809160305342" y="3.5211267605633805"/>
         </scene>

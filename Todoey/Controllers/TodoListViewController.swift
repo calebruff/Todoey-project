@@ -110,8 +110,13 @@ class TodoListViewController: UITableViewController {
     }
 }
 
+//MARK: - Search bar methods
+
 extension TodoListViewController: UISearchBarDelegate {
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Ites> = Item.fetchRequest()
         
     }
 }

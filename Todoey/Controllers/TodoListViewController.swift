@@ -108,6 +108,8 @@ class TodoListViewController: UITableViewController {
         } catch {
             print("Error fetching data from context\(error)")
         }
+        
+        tableView.reloadData()
     }
 }
 
@@ -122,6 +124,12 @@ extension TodoListViewController: UISearchBarDelegate {
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
+        if searchBar.text?.count == 0 {
+            loadItems()
+        }
+        
         loadItems(with: request)
+        
+        searchBar.resignFirstResponder()
     }
 }

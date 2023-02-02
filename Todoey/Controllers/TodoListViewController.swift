@@ -130,6 +130,8 @@ extension TodoListViewController: UISearchBarDelegate {
         
         loadItems(with: request)
         
-        searchBar.resignFirstResponder()
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
+        }
     }
 }

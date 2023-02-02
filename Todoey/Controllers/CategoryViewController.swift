@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class CategoryViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
-
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
     }
+    
+    //MARK: - TableView Datasource Methods
+    
+    //MARK: - TableView Delegate Methods
+    
+    //MARK: - Add New Categories
+    
+    //MARK: - Data Manipulation Methods
 }

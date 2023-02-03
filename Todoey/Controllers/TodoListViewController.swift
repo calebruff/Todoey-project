@@ -109,7 +109,7 @@ class TodoListViewController: UITableViewController {
             print("Error fetching data from context\(error)")
         }
         
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }
 

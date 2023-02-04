@@ -47,9 +47,6 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //        context.delete(itemArray[indexPath.row])
-        //        itemArray.remove(at: indexPath.row)
-        
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
@@ -101,6 +98,7 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
+        
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         do {
@@ -109,7 +107,7 @@ class TodoListViewController: UITableViewController {
             print("Error fetching data from context\(error)")
         }
         
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }
 
@@ -118,6 +116,7 @@ class TodoListViewController: UITableViewController {
 extension TodoListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)

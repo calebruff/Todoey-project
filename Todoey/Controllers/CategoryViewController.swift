@@ -48,6 +48,19 @@ class CategoryViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    func loadCategories() {
+        
+        let request : NSFetchRequest<Category> = Category.fetchRequest()
+        
+        do {
+            categories = try context.fetch(request)
+        } catch {
+            print("Error loading categries \(error)")
+        }
+        
+        tableView.reloadData()
+    }
 
     //MARK: - Add New Categories
     

@@ -18,6 +18,7 @@ class CategoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadCategories()
     }
     
     //MARK: - TableView Datasource Methods
@@ -35,6 +36,20 @@ class CategoryViewController: UITableViewController {
         
         return cell
     }
+    
+    //MARK: - Data Manipulation Methods
+
+    func saveCategories() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving category \(error)")
+        }
+        
+        tableView.reloadData()
+    }
+
+    //MARK: - Add New Categories
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -66,7 +81,5 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - TableView Delegate Methods
     
-    //MARK: - Add New Categories
     
-    //MARK: - Data Manipulation Methods
 }

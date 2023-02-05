@@ -38,6 +38,29 @@ class CategoryViewController: UITableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+            
+            let newCategory = Category(context: self.context)
+            newCategory.name = textField.text!
+            
+            self.categories.append(newCategory)
+            
+            saveCategories()
+            
+        }
+        
+        alert.addAction(action)
+        
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Add new category"
+        }
+        
+        present(alert, animated: true, completion: nil)
     }
     
     

@@ -22,7 +22,7 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - TableView Datasource Methods
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return categories.count
@@ -38,7 +38,7 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - Data Manipulation Methods
-
+    
     func saveCategories() {
         do {
             try context.save()
@@ -61,7 +61,7 @@ class CategoryViewController: UITableViewController {
         
         tableView.reloadData()
     }
-
+    
     //MARK: - Add New Categories
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -70,7 +70,7 @@ class CategoryViewController: UITableViewController {
         
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add", style: .default) { [self] (action) in
             
             let newCategory = Category(context: self.context)
             newCategory.name = textField.text!

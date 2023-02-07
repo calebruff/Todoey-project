@@ -104,8 +104,4 @@ class CategoryViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
-    
-    
-    
 }
